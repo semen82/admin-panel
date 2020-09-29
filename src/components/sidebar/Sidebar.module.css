@@ -1,0 +1,51 @@
+.sidebar {
+  position: fixed;
+  background-color: #0a2037;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 200px;
+}
+
+.sidebar h2 {
+  color: antiquewhite;
+  margin-top: 0;
+}
+
+.adminIcon {
+  width: 40px;
+  height: auto;
+  margin-bottom: 100px;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.navItem {
+  width: 100%;
+}
+
+.navItem a {
+  display: block;
+  text-decoration: none;
+  color: antiquewhite;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.active {
+  display: block;
+  text-decoration: none;
+  color: antiquewhite;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.navItem a:hover {
+  background-color: #60646d;
+}

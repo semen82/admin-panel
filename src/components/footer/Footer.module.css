@@ -1,0 +1,24 @@
+.footer {
+  background-color: rgb(12, 12, 12);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer h2 {
+  color: antiquewhite;
+  margin: 0;
+}
+
+.copy,
+.publicity {
+  color: antiquewhite;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.publicity a {
+  color: coral;
+  text-decoration: none;
+  font-size: 14px;
+}

@@ -1,0 +1,15 @@
+.header {
+  width: 100%;
+  background-color: rgb(212, 255, 255);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.auth {
+  cursor: pointer;
+}

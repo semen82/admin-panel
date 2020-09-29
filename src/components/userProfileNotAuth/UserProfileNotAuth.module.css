@@ -1,0 +1,5 @@
+.userProfileNotAuth {
+  padding: 15px;
+  background-color: rgb(255, 236, 173);
+  flex-grow: 1;
+}

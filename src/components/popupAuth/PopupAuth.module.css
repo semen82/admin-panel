@@ -1,0 +1,102 @@
+.popupShadow {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outerWrap {
+  overflow: hidden;
+  width: 100%;
+  z-index: 1000;
+}
+
+.innerWrap {
+  width: 200%;
+  display: flex;
+}
+
+.innerWrap h3 {
+  margin-top: 0;
+}
+
+.innerWrap input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+}
+
+.popup {
+  width: 90%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+
+.innerWrap button {
+  padding: 3px 10px;
+  background-color: rgb(49, 182, 60);
+  border: 1px solid rgb(22, 131, 0);
+  outline: none;
+  border-radius: 3px;
+}
+
+.innerWrap button:hover {
+  background-color: rgb(22, 131, 0);
+  border: 1px solid rgb(49, 182, 60);
+  color: #fff;
+}
+
+.innerWrap button:active {
+  background-color: rgb(49, 182, 60);
+  border: 1px solid rgb(22, 131, 0);
+}
+
+.popupLabel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login,
+.register {
+  width: 100%;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.login.logReg,
+.register.logReg {
+  box-sizing: border-box;
+  padding: 15px;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.toggleLogReg {
+  font-size: 14px;
+  color: blueviolet;
+  cursor: pointer;
+}
+
+.close {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  padding: 5px;
+  border: 1px solid #b80000;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+}

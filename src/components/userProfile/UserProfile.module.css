@@ -1,0 +1,36 @@
+.userProfile {
+  padding: 15px;
+  background-color: rgb(255, 236, 173);
+  flex-grow: 1;
+}
+
+.topLine {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.userProfile h2 {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.userProfile img {
+  margin-right: 40px;
+}
+
+.wrap {
+  display: flex;
+}
+
+.profileList {
+  list-style: none;
+}
+
+.profileList li {
+  margin-bottom: 15px;
+}
+
+.profileList span {
+  font-weight: bold;
+}

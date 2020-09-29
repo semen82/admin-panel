@@ -1,0 +1,14 @@
+.app {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 100%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 100%;
+  margin-left: 200px;
+}

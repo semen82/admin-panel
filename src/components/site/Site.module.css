@@ -1,0 +1,5 @@
+.site {
+  padding: 15px;
+  background-color: rgb(236, 255, 182);
+  flex-grow: 1;
+}

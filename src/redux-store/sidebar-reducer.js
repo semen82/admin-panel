@@ -5,7 +5,13 @@ const initialState = {
   // Навигационное меню сайдбара
   sidebarNavMenu: [
     { id: 1, label: 'Сайт', path: '/', name: 'site', active: true },
-    { id: 2, label: 'Редактор', path: '/editor', name: 'editor', active: true },
+    {
+      id: 2,
+      label: 'Редактор',
+      path: '/admin/editor-phone',
+      name: 'editor',
+      active: true,
+    },
     {
       id: 3,
       label: 'Личный кабинет',

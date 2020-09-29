@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './App.module.css';
 import { authListener, firebaseInitialize } from './common/api/authAPI';
 import { connect } from 'react-redux';
@@ -8,43 +8,16 @@ import UserProfileNotAuth from './components/userProfileNotAuth/UserProfileNotAu
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
-import Editor from './components/editor/Editor';
+import EditorPhone from './components/editor-phone/EditorPhone';
 import Site from './components/site/Site';
 import Footer from './components/footer/Footer';
-import firebase from 'firebase/app';
+import OtherPages from './components/other-pages/OtherPages';
 
 firebaseInitialize();
-const db = firebase.firestore();
-// console.log(db);
 
 const App = (props) => {
   const { setUserData, toggleIsLogin, isLogin, login } = props;
   authListener(setUserData, toggleIsLogin);
-
-  useEffect(() => {
-    // db.collection('users')
-    //   .add({
-    //     first: 'Alan',
-    //     middle: 'Mathison',
-    //     last: 'Turing',
-    //     born: 1912,
-    //   })
-    //   .then(function (docRef) {
-    //     // console.log('Document written with ID: ', docRef.id);
-    //   })
-    //   .catch(function (error) {
-    //     console.error('Error adding document: ', error);
-    //   });
-
-    db.collection('cardsStore')
-      .get()
-      .then((snapshot) => {
-        // console.log(snapshot);
-        snapshot.forEach((doc) => {
-          console.log(doc.id, doc.data());
-        });
-      });
-  }, []);
 
   return (
     <div className={styles.app}>
@@ -58,7 +31,8 @@ const App = (props) => {
             path="/profile"
             component={isLogin ? UserProfile : UserProfileNotAuth}
           />
-          <Route path="/editor" component={Editor} />
+          <Route path="/admin/editor-phone" component={EditorPhone} />
+          <Route component={OtherPages} />
         </Switch>
 
         <Footer />

@@ -28,11 +28,16 @@
   margin-bottom: 5px;
 }
 
-.areaRow .inputText {
+.inputText,
+.inputTextarea {
   padding: 5px 10px;
   font-size: 14px;
   width: 100%;
   margin-bottom: 10px;
+}
+
+.inputTextarea {
+  min-height: 80px;
 }
 
 .labelArea {
@@ -44,6 +49,11 @@
 .areaName {
   margin-bottom: 5px;
   font-weight: bold;
+  font-size: 14px;
+}
+
+.areaNameInterpretation {
+  margin-bottom: 5px;
   font-size: 13px;
 }
 

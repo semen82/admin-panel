@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './EditorFormPhone.module.css';
 import { Field } from 'redux-form';
 import { connect } from 'react-redux';
@@ -26,12 +26,7 @@ const Img = (props) => {
 };
 
 const EditorFormPhone = (props) => {
-  const { currentGoodsCode, setCurrentGoodsCode } = props;
-
-  useEffect(() => {
-    setCurrentGoodsCode(createKey(prefixCode));
-  }, [setCurrentGoodsCode]);
-
+  const { currentGoodsCode, setCurrentGoodsCode, initialValues } = props;
   // префикс товара для кода товара
   const prefixCode = 'MP';
 
@@ -104,8 +99,6 @@ const EditorFormPhone = (props) => {
           console.log(`Сохранено: ${item.fileName}`);
         });
     }
-    // генерация нового кода товара
-    setCurrentGoodsCode(createKey(prefixCode));
     setImagesCurrentCard([]);
   };
 
@@ -124,9 +117,14 @@ const EditorFormPhone = (props) => {
       </h2>
       <section className={styles.areaRow}>
         <div className={styles.areaName}>Название товара</div>
+        <div className={styles.areaNameInterpretation}>
+          Это название будет отображатся крупным жирным шрифтом при просмотре
+          товара
+        </div>
+
         <Field
           type="text"
-          name="goods-title"
+          name="goodsTitle"
           component="input"
           placeholder="Название"
           className={styles.inputText}
@@ -135,18 +133,18 @@ const EditorFormPhone = (props) => {
           Код товара:&emsp;
           <input
             type="text"
-            name="goods-code"
-            component="input"
             className={styles.inputGoodsCode}
-            value={currentGoodsCode}
+            defaultValue={currentGoodsCode}
             disabled
           />
-          <button
-            className={styles.btnGenerateCode}
-            onClick={generateGoodsCode}
-          >
-            Генерировать
-          </button>
+          {!initialValues.currentGoodsCode && (
+            <button
+              className={styles.btnGenerateCode}
+              onClick={generateGoodsCode}
+            >
+              Генерировать
+            </button>
+          )}
         </div>
       </section>
 
@@ -180,21 +178,10 @@ const EditorFormPhone = (props) => {
       </section>
 
       <section className={styles.areaRow}>
-        <div className={styles.areaName}>Артикул</div>
-        <Field
-          type="text"
-          name="goods-article"
-          component="input"
-          placeholder="Артикул"
-          className={styles.inputText}
-        />
-      </section>
-
-      <section className={styles.areaRow}>
         <div className={styles.areaName}>Цена (грн)</div>
         <Field
           type="number"
-          name="goods-price"
+          name="goodsPrice"
           component="input"
           placeholder="Цена"
           className={styles.inputText}
@@ -202,7 +189,32 @@ const EditorFormPhone = (props) => {
       </section>
 
       <section className={styles.areaRow}>
+        <div className={styles.areaName}>Краткое описание товара</div>
+        <Field
+          type="number"
+          name="goodsShortDescription"
+          component="textarea"
+          placeholder="Краткое описание"
+          className={styles.inputTextarea}
+        />
+      </section>
+
+      <section className={styles.areaRow}>
+        <div className={styles.areaName}>Длинное описание товара</div>
+        <Field
+          type="number"
+          name="goodsLongDescription"
+          component="textarea"
+          placeholder="Длинное описание"
+          className={styles.inputTextarea}
+        />
+      </section>
+
+      <section className={styles.areaRow}>
         <div className={styles.labelArea}>Характеристики</div>
+        <div className={styles.areaNameInterpretation}>
+          Эти поля будут отображатся на вкладке товара "Характеристики"
+        </div>
         <h3>Стандарт связи/интернет</h3>
         <div className={styles.areaName}>
           Стандарт связи
@@ -730,7 +742,6 @@ const EditorFormPhone = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    createStructure: state.editorPhone.createStructure,
     currentGoodsCode: state.editorPhone.currentGoodsCode,
   };
 };

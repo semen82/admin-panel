@@ -1,0 +1,29 @@
+.tabSwitcherWrap {
+  width: 100%;
+}
+
+.tabSwitcherList {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.tabSwitcherItem {
+  flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tabSwitcherItemActive {
+  background-color: #b7b4b6;
+  flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.workspace {
+  padding: 15px;
+}

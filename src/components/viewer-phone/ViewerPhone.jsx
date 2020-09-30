@@ -4,7 +4,7 @@ import styles from './ViewerPhone.module.css';
 const ViewerPhone = () => {
   return (
     <div className={styles.viewerPhone}>
-      <h2>ViewerPhone</h2>
+      <h2>Просмотр товаров "Мобильные телефоны"</h2>
     </div>
   );
 };

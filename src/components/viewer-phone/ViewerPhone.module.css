@@ -1,0 +1,9 @@
+.viewerPhone {
+  padding: 15px;
+  /* background-color: #fff; */
+  flex-grow: 1;
+  background-color: #b7b4b6;
+}
+.viewerPhone h2 {
+  font-size: 18px;
+}

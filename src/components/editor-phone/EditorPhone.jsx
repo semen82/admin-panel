@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './EditorPhone.module.css';
 import { reduxForm } from 'redux-form';
 import EditorFormPhone from './EditorFormPhone';
 import firebase from 'firebase/app';
 import { connect } from 'react-redux';
 import TabSwitcher from '../tab-switcher/TabSwitcher';
+import ViewerPhone from '../viewer-phone/ViewerPhone';
 
 const EditorForm = reduxForm({ form: 'editorForm' })(EditorFormPhone);
 
@@ -12,6 +13,7 @@ const EditorForm = reduxForm({ form: 'editorForm' })(EditorFormPhone);
 
 const Editor = (props) => {
   const { currentGoodsCode, initialValues } = props;
+  const [editModeTabSwitcher, setEditModeTabSwitcher] = useState(true);
   const db = firebase.firestore();
 
   const onSubmit = (formData) => {
@@ -35,8 +37,15 @@ const Editor = (props) => {
 
   return (
     <div className={styles.editorPhone}>
-      <TabSwitcher />
-      {/* <EditorForm onSubmit={onSubmit} initialValues={initialValues} /> */}
+      <TabSwitcher
+        setEditModeTabSwitcher={setEditModeTabSwitcher}
+        editModeTabSwitcher={editModeTabSwitcher}
+      />
+      {editModeTabSwitcher ? (
+        <EditorForm onSubmit={onSubmit} initialValues={initialValues} />
+      ) : (
+        <ViewerPhone />
+      )}
     </div>
   );
 };

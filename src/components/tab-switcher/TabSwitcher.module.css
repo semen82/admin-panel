@@ -1,8 +1,4 @@
-.tabSwitcherWrap {
-  width: 100%;
-}
-
-.tabSwitcherList {
+.tabSwitcher {
   width: 100%;
   background-color: rgb(255, 255, 255);
   margin: 0;
@@ -11,19 +7,18 @@
   list-style: none;
 }
 
-.tabSwitcherItem {
+.tabSwitcherItem,
+.tabSwitcherItemActive {
   flex-grow: 1;
   text-align: center;
   cursor: pointer;
+  padding: 5px;
+}
+
+.tabSwitcherItem {
+  background-color: rgb(212, 255, 255);
 }
 
 .tabSwitcherItemActive {
   background-color: #b7b4b6;
-  flex-grow: 1;
-  text-align: center;
-  cursor: pointer;
-}
-
-.workspace {
-  padding: 15px;
 }

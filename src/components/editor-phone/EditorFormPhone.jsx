@@ -113,7 +113,7 @@ const EditorFormPhone = (props) => {
   return (
     <form onSubmit={props.handleSubmit} className={styles.editorForm}>
       <h2 className={styles.titlePage}>
-        Редактор карточки (Мобильные телефоны)
+        Редактор карточки "Мобильные телефоны"
       </h2>
       <section className={styles.areaRow}>
         <div className={styles.areaName}>Название товара</div>

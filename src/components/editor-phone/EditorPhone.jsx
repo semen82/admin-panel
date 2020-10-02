@@ -13,12 +13,12 @@ const EditorForm = reduxForm({ form: 'editorForm' })(EditorFormPhone);
 
 const Editor = (props) => {
   const { currentGoodsCode, initialValues } = props;
-  const [editModeTabSwitcher, setEditModeTabSwitcher] = useState(true);
+  const [editModeTabSwitcher, setEditModeTabSwitcher] = useState(false);
   const db = firebase.firestore();
 
   const onSubmit = (formData) => {
     const data = { ...formData, currentGoodsCode };
-    if (!(data['goods-title'] && data.currentGoodsCode)) {
+    if (!(data['goodsTitle'] && data.currentGoodsCode)) {
       alert('Заполнение полей "название товара" и "код" обязательно!');
       return;
     }

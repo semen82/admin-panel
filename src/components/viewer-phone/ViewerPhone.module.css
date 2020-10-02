@@ -4,6 +4,87 @@
   flex-grow: 1;
   background-color: #b7b4b6;
 }
+
 .viewerPhone h2 {
   font-size: 18px;
+}
+
+.productsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.productsItem {
+  background-color: #fff;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.productPicture {
+  width: 60px;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.picture {
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid rgb(190, 190, 190);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.productName {
+  font-size: 14px;
+  color: #aa00d4;
+}
+
+.other {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dateCreations {
+  font-size: 13px;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.dateCreations span {
+  font-weight: normal;
+  margin: 0 5px;
+}
+
+.buttons button {
+  font-size: 13px;
+  margin: 0 5px;
+  border: none;
+  outline: none;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  outline: 1px solid #aa00d4;
+}
+
+.buttons button:active {
+  outline: 1px solid #f2beff;
+}
+
+.btnEdit {
+  background-color: rgb(109, 172, 90);
+}
+
+.btnDelete {
+  background-color: rgb(255, 144, 144);
 }
